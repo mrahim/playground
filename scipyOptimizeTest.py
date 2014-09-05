@@ -30,3 +30,16 @@ root = optimize.fsolve(f,1) #find roots
 print root
 
 
+xd = np.linspace(-10,10)
+yd = f(xd) + np.random.randn(xd.size)
+
+
+def f2(x,a,b):
+    return a*x**2 + b*np.sin(x)
+
+guess = [2,2]
+params, params_cov = optimize.curve_fit(f2, xd, yd, guess)
+
+print params
+
+
