@@ -8,18 +8,26 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import optimize
 
-def sixhumpcamelback(x,y):
-    return (4-2.1*np.power(x,2)+np.power(x,4)/3)*np.power(x,2)+x*y+(4*np.power(y,2)-4)*np.power(y,2)
+def sixhumpcamelback(X):
+    return (4-2.1*np.power(X[0],2)+np.power(X[0],4)/3)*np.power(X[0],2)+X[0]*X[1]+(4*np.power(X[1],2)-4)*np.power(X[1],2)
 
 a=np.linspace(-2,2)
 b=np.linspace(-1,1)
 
 x,y=np.meshgrid(a,b) 
 
-c = sixhumpcamelback(x,y)
+c = sixhumpcamelback([x,y])
 
-print c
+print y.shape
 
 plt.close('all')
 plt.imshow(c)
+plt.colorbar()
 
+R = optimize.fmin_bfgs(sixhumpcamelback, [0.1,0.1])
+
+R1 = (R[0]+2)*50/4
+R2 = (R[1]+1)*50/2
+print R
+
+plt.scatter(R1,R2)
