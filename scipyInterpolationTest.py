@@ -26,6 +26,3 @@ cubic_interp = interpolate.interp1d(m_time, measures, kind='cubic')
 c_time = np.linspace(0,1)
 plt.plot(c_time,linear_interp(c_time))
 plt.plot(c_time,cubic_interp(c_time))
-
-
-
