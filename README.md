@@ -1,9 +1,5 @@
-README
-======
+About
+=====
 
-Some basic Python examples :
-	* NumPy
-	* SciPy
-	* matplotlib
-	* pypreprocess
-
+This is my playground !
+Just some basic scripts for python and for SPM
