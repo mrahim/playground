@@ -2,4 +2,4 @@ About
 =====
 
 This is my playground !
-Just some basic scripts for python and for SPM
+It contains basic scripts for python using numpy, scipy, scikit-learn, nipy ... And also scripts for SPM (preprocessing, 1st level analysis)
