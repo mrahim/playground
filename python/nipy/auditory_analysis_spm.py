@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Auditory fMRI pre-processing with spm via nipype
+Auditory fMRI pre-processing and first level analysis with spm via nipype
 """
 
 import os
@@ -51,5 +51,25 @@ preproc.connect([(realigner, coregister, [('mean_image', 'target')]),
 (segmenter, normalizer_f, [('transformation_mat','parameter_file')]),
 (realigner, normalizer_f, [('realigned_files','source')])
 ])
-preproc.run()
-preproc.write_graph()
+#preproc.run()
+#preproc.write_graph()
+
+# 1st level analysis
+modelspec = pe.Node(interface=model.SpecifySPMModel(), name='model_specification')
+modelspec.inputs.input_units = 'secs'
+modelspec.inputs.time_repetition = 7.
+#modelspec.inputs.functional_runs = TOLINK
+modelspec.inputs.subject_info = {'conditions', ['Listen'] * 7,
+                                 'onsets', 7 * np.arange(6,84,12),
+'durations', 42 * np.ones(7)}
+modelspec.inputs.high_pass_filter_cutoff = 168
+
+lvl1design = pe.Node(interface=spm.Level1Design(), name='level1design')
+
+analysis = pe.Workflow(name='analysis')
+analysis.base_dir = os.path.join(BASE_DIR)
+
+#lvl1design.inputs.bases = {}
+#lvl1design.inputs.session_info = 
+#lvl1design.inputs.interscan_interval = 7.
+#lvl1design.inputs.timing_units = 'secs'
