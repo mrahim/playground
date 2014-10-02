@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Auditory fMRI pre-processing and first level analysis with spm via nipype
+Auditory fMRI first level analysis with spm via nipype
 """
 
 import os
@@ -25,32 +25,30 @@ modelspec = pe.Node(interface=model.SpecifySPMModel(),
 modelspec.inputs.input_units = 'secs'
 modelspec.inputs.time_repetition = 7.
 modelspec.inputs.high_pass_filter_cutoff = 168.
-modelspec.inputs.functional_runs = [[os.path.join(BASE_DIR, 'fM00223',
-                         '4D_preproc.nii')]]
-modelspec.inputs.subject_info = Bunch(conditions=['Listen'],
-                                      onsets=[7. * np.arange(6,84,12)],
-durations=[[42.]])
+modelspec.inputs.functional_runs = [os.path.join( BASE_DIR, 'fM00223',
+                         '4D_preproc.nii')]
+subject_info = Bunch(conditions=['Listen'],
+                     onsets=[7. * np.arange(6,84,12)],
+                     durations=[[42.]])                     
+modelspec.inputs.subject_info = subject_info
+modelspec.base_dir = os.path.join(BASE_DIR,'analysis')
+modelspec.run()
 
 
-# Level 1 design
-lvl1design = pe.Node(interface=spm.Level1Design(), name='level1design')
+# Design
+lvl1design = pe.Node(interface=spm.Level1Design(), name='model_design')
+lvl1design.inputs.session_info = modelspec.get_output('session_info')
 lvl1design.inputs.interscan_interval = 7.
 lvl1design.inputs.timing_units = 'secs'
 lvl1design.inputs.bases = {'hrf':{}}
-lvl1design.inputs.spm_mat_dir = os.path.join(BASE_DIR, 'analysis',
-                                             'level1design')
+lvl1design.base_dir = os.path.join(BASE_DIR,'analysis')
+lvl1design.run()
+
 
 # Model estimation
 lvl1estimate = pe.Node(interface=spm.EstimateModel(),
                        name='model_estimation')
 lvl1estimate.inputs.estimation_method = {'Classical':{}}
-
-# Workflow
-analysis = pe.Workflow(name='analysis')
-analysis.base_dir = BASE_DIR
-analysis.connect([(modelspec, lvl1design, [('session_info', 'session_info')]),
-                  (lvl1design, lvl1estimate, 
-                   [('spm_mat_file', 'spm_mat_file')])])
-
-analysis.run()
-analysis.write_graph()
+lvl1estimate.inputs.spm_mat_file = lvl1design.get_output('spm_mat_file')
+lvl1estimate.base_dir = os.path.join(BASE_DIR,'analysis')
+lvl1estimate.run()
