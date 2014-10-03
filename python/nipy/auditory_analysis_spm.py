@@ -10,6 +10,12 @@ import nipype.pipeline.engine as pe
 import nipype.algorithms.modelgen as model
 from nipype.interfaces.base import Bunch
 
+from nipype import config
+cfg = dict(logging=dict(workflow_level = 'DEBUG'),
+           execution={'stop_on_first_crash': False,
+                      'hash_method': 'content'})
+config.update_config(cfg)
+
 # Global paths
 BASE_DIR = '/volatile/accounts/mehdi/data/examples/MoAEpilot/'
 MATLAB_CMD = '/usr/local/bin/spm12b run script'
@@ -37,8 +43,6 @@ lvl1design = pe.Node(interface=spm.Level1Design(), name='level1design')
 lvl1design.inputs.interscan_interval = 7.
 lvl1design.inputs.timing_units = 'secs'
 lvl1design.inputs.bases = {'hrf':{}}
-lvl1design.inputs.spm_mat_dir = os.path.join(BASE_DIR, 'analysis',
-                                             'level1design')
 
 # Model estimation
 lvl1estimate = pe.Node(interface=spm.EstimateModel(),

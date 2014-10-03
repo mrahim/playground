@@ -52,3 +52,4 @@ lvl1estimate.inputs.estimation_method = {'Classical':{}}
 lvl1estimate.inputs.spm_mat_file = lvl1design.get_output('spm_mat_file')
 lvl1estimate.base_dir = os.path.join(BASE_DIR,'analysis')
 lvl1estimate.run()
+lvl1estimate.write_report()
