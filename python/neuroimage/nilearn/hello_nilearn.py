@@ -2,9 +2,9 @@
 """
 Testing nilearn toolbox
 """
-import os
+import numpy as np
+import matplotlib.pyplot as plt
 from nilearn import datasets
+from nilearn.input_data import NiftiMasker
 
-print os.W_OK
-#data = datasets.fetch_localizer_calculation_task()
-
+data = datasets.fetch_localizer_calculation_task(data_dir='.')
