@@ -1,4 +1,4 @@
-"Subject ID","Phase","Sex","Weight","APOE A2","APOE A1","DX Group","Visit","Archive Date","Study Date","Age","Global CDR","Modified Hachinski Total Score","NPI-Q Total Score","MMSE Total Score","Functional Assessment Questionnaire Total Score","GDSCALE Total Score","Modality","Description","Image ID"
+"Subject_ID","Phase","Sex","Weight","APOE_A2","APOE_A1","DX_Group","Visit","Archive_Date","Study_Date","Age","Global_CDR","Modified_Hachinski_Total_Score","NPI-Q_Total_Score","MMSE_Total_Score","Functional_Assessment_Questionnaire_Total_Score","GDSCALE_Total_Score","Modality","Description","Image_ID"
 "002_S_0295","ADNI 2","M","73.0","4","3","Normal","ADNI2 Initial Visit-Cont Pt","6/02/2011","6/02/2011","90.0","0.0","","","28.0","0.0","1.0","fMRI","Resting State fMRI","238623"
 "002_S_0295","ADNI 2","M","73.0","4","3","Normal","ADNI2 Initial Visit-Cont Pt","6/09/2011","6/09/2011","90.0","0.0","","","28.0","0.0","1.0","PET","ADNI Brain PET: Raw FDG","239487"
 "002_S_0295","ADNI 2","M","73.0","4","3","Normal","ADNI2 Initial Visit-Cont Pt","6/10/2011","6/10/2011","90.1","0.0","","","28.0","0.0","1.0","PET","ADNI Brain PET: Raw AV45","239773"
