@@ -1,0 +1,2352 @@
+*** Header Start ***
+VersionPersist: 1
+LevelName: Session
+LevelName: Block
+LevelName: Trial
+LevelName: SubTrial
+LevelName: LogLevel5
+LevelName: LogLevel6
+LevelName: LogLevel7
+LevelName: LogLevel8
+LevelName: LogLevel9
+LevelName: LogLevel10
+Experiment: MIDT_forscan
+SessionDate: 01-01-2002
+SessionTime: 04:55:50
+RandomSeed: 1638223338
+Group: 1
+Subject: 05100
+Session: 1
+Display.RefreshRate: 59.868
+*** Header End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 1
+		PrimePosition: left
+		prize: 10
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: bigwinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 280
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 1
+		PicturePrime.OnsetDelay: 46
+		PicturePrime.OnsetTime: 133585
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4329
+		PictureTarget.OnsetDelay: 64
+		PictureTarget.OnsetTime: 138229
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 138464
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 235
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 10
+		Fix_time: 3691
+		J_time: 15
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 2
+		PrimePosition: left
+		prize: 2
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: smallwinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 270
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 2
+		PicturePrime.OnsetDelay: 68
+		PicturePrime.OnsetTime: 143708
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4162
+		PictureTarget.OnsetDelay: 13
+		PictureTarget.OnsetTime: 148134
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 148358
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 224
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 12
+		Fix_time: 3868
+		J_time: 40
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 3
+		PrimePosition: left
+		prize: 10
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: bigwinleft.bmp 
+		Target: targetleft.bmp
+		Target_time: 260
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 3
+		PicturePrime.OnsetDelay: 10
+		PicturePrime.OnsetTime: 153746
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4416
+		PictureTarget.OnsetDelay: 10
+		PictureTarget.OnsetTime: 158423
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 158636
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 213
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 22
+		Fix_time: 3624
+		J_time: 18
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 4
+		PrimePosition: right
+		prize: 0
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: nowinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 4
+		PicturePrime.OnsetDelay: 32
+		PicturePrime.OnsetTime: 163769
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4149
+		PictureTarget.OnsetDelay: 26
+		PictureTarget.OnsetTime: 168195
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 168434
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 239
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 22
+		Fix_time: 3901
+		J_time: 29
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 5
+		PrimePosition: right
+		prize: 10
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: bigwinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 5
+		PicturePrime.OnsetDelay: 22
+		PicturePrime.OnsetTime: 173858
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4479
+		PictureTarget.OnsetDelay: 13
+		PictureTarget.OnsetTime: 178601
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 178814
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 213
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 32
+		Fix_time: 3571
+		J_time: 12
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 6
+		PrimePosition: left
+		prize: 0
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: nowinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 6
+		PicturePrime.OnsetDelay: 22
+		PicturePrime.OnsetTime: 183880
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4460
+		PictureTarget.OnsetDelay: 16
+		PictureTarget.OnsetTime: 188607
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 188808
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 201
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 32
+		Fix_time: 3590
+		J_time: 13
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 7
+		PrimePosition: right
+		prize: 2
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: smallwinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 7
+		PicturePrime.OnsetDelay: 37
+		PicturePrime.OnsetTime: 193918
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4352
+		PictureTarget.OnsetDelay: 8
+		PictureTarget.OnsetTime: 198529
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 198736
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 207
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 34
+		Fix_time: 3698
+		J_time: 31
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 8
+		PrimePosition: right
+		prize: 0
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: nowinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 8
+		PicturePrime.OnsetDelay: 19
+		PicturePrime.OnsetTime: 203957
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4099
+		PictureTarget.OnsetDelay: 10
+		PictureTarget.OnsetTime: 208317
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 208511
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 194
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 34
+		Fix_time: 3951
+		J_time: 21
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 9
+		PrimePosition: left
+		prize: 10
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: bigwinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 9
+		PicturePrime.OnsetDelay: 13
+		PicturePrime.OnsetTime: 213963
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4028
+		PictureTarget.OnsetDelay: 14
+		PictureTarget.OnsetTime: 218256
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 218447
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 191
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 44
+		Fix_time: 4022
+		J_time: 49
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 10
+		PrimePosition: left
+		prize: 0
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: nowinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 10
+		PicturePrime.OnsetDelay: 18
+		PicturePrime.OnsetTime: 224002
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4442
+		PictureTarget.OnsetDelay: 17
+		PictureTarget.OnsetTime: 228712
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 228923
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 211
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 44
+		Fix_time: 3608
+		J_time: 23
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 11
+		PrimePosition: right
+		prize: 2
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: smallwinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 11
+		PicturePrime.OnsetDelay: 10
+		PicturePrime.OnsetTime: 234024
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4336
+		PictureTarget.OnsetDelay: 6
+		PictureTarget.OnsetTime: 238617
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 238810
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 193
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 46
+		Fix_time: 3714
+		J_time: 35
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 12
+		PrimePosition: right
+		prize: 0
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: nowinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 12
+		PicturePrime.OnsetDelay: 15
+		PicturePrime.OnsetTime: 244046
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4360
+		PictureTarget.OnsetDelay: 16
+		PictureTarget.OnsetTime: 248673
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 248888
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 215
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 46
+		Fix_time: 3690
+		J_time: 40
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 13
+		PrimePosition: left
+		prize: 10
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: bigwinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 13
+		PicturePrime.OnsetDelay: 10
+		PicturePrime.OnsetTime: 254085
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4098
+		PictureTarget.OnsetDelay: 10
+		PictureTarget.OnsetTime: 258444
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 258630
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 186
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 56
+		Fix_time: 3952
+		J_time: 23
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 14
+		PrimePosition: right
+		prize: 2
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: smallwinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 14
+		PicturePrime.OnsetDelay: 10
+		PicturePrime.OnsetTime: 264090
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4358
+		PictureTarget.OnsetDelay: 2
+		PictureTarget.OnsetTime: 268701
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 268902
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 201
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 58
+		Fix_time: 3692
+		J_time: 20
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 15
+		PrimePosition: left
+		prize: 0
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: nowinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 15
+		PicturePrime.OnsetDelay: 13
+		PicturePrime.OnsetTime: 274112
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4340
+		PictureTarget.OnsetDelay: 3
+		PictureTarget.OnsetTime: 278706
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 278932
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 226
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 58
+		Fix_time: 3710
+		J_time: 39
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 16
+		PrimePosition: left
+		prize: 2
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: smallwinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 16
+		PicturePrime.OnsetDelay: 11
+		PicturePrime.OnsetTime: 284168
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4242
+		PictureTarget.OnsetDelay: 17
+		PictureTarget.OnsetTime: 288678
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 288890
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 212
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 60
+		Fix_time: 3808
+		J_time: 11
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 17
+		PrimePosition: right
+		prize: 0
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: nowinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 17
+		PicturePrime.OnsetDelay: 5
+		PicturePrime.OnsetTime: 294173
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4464
+		PictureTarget.OnsetDelay: 12
+		PictureTarget.OnsetTime: 298900
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 299106
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 206
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 60
+		Fix_time: 3586
+		J_time: 20
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 18
+		PrimePosition: left
+		prize: 2
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: smallwinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 18
+		PicturePrime.OnsetDelay: 13
+		PicturePrime.OnsetTime: 304195
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4284
+		PictureTarget.OnsetDelay: 9
+		PictureTarget.OnsetTime: 308739
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 308935
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 196
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 62
+		Fix_time: 3766
+		J_time: 10
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 19
+		PrimePosition: right
+		prize: 10
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: bigwinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 19
+		PicturePrime.OnsetDelay: 7
+		PicturePrime.OnsetTime: 314184
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4014
+		PictureTarget.OnsetDelay: 11
+		PictureTarget.OnsetTime: 318460
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 318653
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 193
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 72
+		Fix_time: 4036
+		J_time: 43
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 20
+		PrimePosition: left
+		prize: 2
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: smallwinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 20
+		PicturePrime.OnsetDelay: 7
+		PicturePrime.OnsetTime: 324206
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4071
+		PictureTarget.OnsetDelay: 4
+		PictureTarget.OnsetTime: 328532
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 328738
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 206
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 74
+		Fix_time: 3979
+		J_time: 33
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 21
+		PrimePosition: right
+		prize: 0
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: nowinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 21
+		PicturePrime.OnsetDelay: 17
+		PicturePrime.OnsetTime: 334245
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4343
+		PictureTarget.OnsetDelay: 16
+		PictureTarget.OnsetTime: 338855
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 339066
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 211
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 74
+		Fix_time: 3707
+		J_time: 46
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 22
+		PrimePosition: left
+		prize: 2
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: smallwinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 22
+		PicturePrime.OnsetDelay: 4
+		PicturePrime.OnsetTime: 344284
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4044
+		PictureTarget.OnsetDelay: 14
+		PictureTarget.OnsetTime: 348593
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 348791
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 198
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 76
+		Fix_time: 4006
+		J_time: 10
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 23
+		PrimePosition: right
+		prize: 10
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: bigwinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 23
+		PicturePrime.OnsetDelay: 6
+		PicturePrime.OnsetTime: 354272
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4439
+		PictureTarget.OnsetDelay: 4
+		PictureTarget.OnsetTime: 358966
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 359175
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 209
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 86
+		Fix_time: 3611
+		J_time: 48
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 24
+		PrimePosition: right
+		prize: 2
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: smallwinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 24
+		PicturePrime.OnsetDelay: 19
+		PicturePrime.OnsetTime: 364328
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4000
+		PictureTarget.OnsetDelay: 8
+		PictureTarget.OnsetTime: 368587
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 368828
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 241
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 88
+		Fix_time: 4050
+		J_time: 22
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 25
+		PrimePosition: left
+		prize: 10
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: bigwinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 25
+		PicturePrime.OnsetDelay: 12
+		PicturePrime.OnsetTime: 374384
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4148
+		PictureTarget.OnsetDelay: 10
+		PictureTarget.OnsetTime: 378793
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 379006
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 213
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 98
+		Fix_time: 3902
+		J_time: 17
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 26
+		PrimePosition: right
+		prize: 0
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: nowinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 26
+		PicturePrime.OnsetDelay: 17
+		PicturePrime.OnsetTime: 384406
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4171
+		PictureTarget.OnsetDelay: 4
+		PictureTarget.OnsetTime: 388832
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 389063
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 231
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 98
+		Fix_time: 3879
+		J_time: 40
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 27
+		PrimePosition: left
+		prize: 10
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: bigwinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 27
+		PicturePrime.OnsetDelay: 10
+		PicturePrime.OnsetTime: 394461
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4121
+		PictureTarget.OnsetDelay: 5
+		PictureTarget.OnsetTime: 398838
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 399039
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 201
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 108
+		Fix_time: 3929
+		J_time: 28
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 28
+		PrimePosition: left
+		prize: 2
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: smallwinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 28
+		PicturePrime.OnsetDelay: 5
+		PicturePrime.OnsetTime: 404483
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4368
+		PictureTarget.OnsetDelay: 8
+		PictureTarget.OnsetTime: 409110
+		PictureTarget.DurationError: 0
+		PictureTarget.RTTime: 0
+		PictureTarget.ACC: 0
+		PictureTarget.RT: 0
+		PictureTarget.RESP: 
+		PictureTarget.CRESP: 5
+		SumPrize: 108
+		Fix_time: 3682
+		J_time: 28
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 29
+		PrimePosition: right
+		prize: 0
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: nowinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 29
+		PicturePrime.OnsetDelay: 6
+		PicturePrime.OnsetTime: 414539
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4485
+		PictureTarget.OnsetDelay: 8
+		PictureTarget.OnsetTime: 419283
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 419500
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 217
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 108
+		Fix_time: 3565
+		J_time: 43
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 30
+		PrimePosition: left
+		prize: 0
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: nowinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 30
+		PicturePrime.OnsetDelay: 7
+		PicturePrime.OnsetTime: 424594
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4253
+		PictureTarget.OnsetDelay: 6
+		PictureTarget.OnsetTime: 429104
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 429314
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 210
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 108
+		Fix_time: 3797
+		J_time: 29
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 31
+		PrimePosition: right
+		prize: 10
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: bigwinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 31
+		PicturePrime.OnsetDelay: 5
+		PicturePrime.OnsetTime: 434617
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4050
+		PictureTarget.OnsetDelay: 8
+		PictureTarget.OnsetTime: 438926
+		PictureTarget.DurationError: 0
+		PictureTarget.RTTime: 0
+		PictureTarget.ACC: 0
+		PictureTarget.RT: 0
+		PictureTarget.RESP: 
+		PictureTarget.CRESP: 4
+		SumPrize: 108
+		Fix_time: 4000
+		J_time: 46
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 32
+		PrimePosition: left
+		prize: 2
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: smallwinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 32
+		PicturePrime.OnsetDelay: 4
+		PicturePrime.OnsetTime: 444689
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4207
+		PictureTarget.OnsetDelay: 2
+		PictureTarget.OnsetTime: 449149
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 449346
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 197
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 110
+		Fix_time: 3843
+		J_time: 26
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 33
+		PrimePosition: right
+		prize: 10
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: bigwinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 33
+		PicturePrime.OnsetDelay: 7
+		PicturePrime.OnsetTime: 454694
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4135
+		PictureTarget.OnsetDelay: 7
+		PictureTarget.OnsetTime: 459087
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 459294
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 207
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 120
+		Fix_time: 3915
+		J_time: 40
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 34
+		PrimePosition: right
+		prize: 0
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: nowinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 34
+		PicturePrime.OnsetDelay: 10
+		PicturePrime.OnsetTime: 464733
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4497
+		PictureTarget.OnsetDelay: 13
+		PictureTarget.OnsetTime: 469494
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 469696
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 202
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 120
+		Fix_time: 3553
+		J_time: 49
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 35
+		PrimePosition: right
+		prize: 2
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: smallwinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 35
+		PicturePrime.OnsetDelay: 18
+		PicturePrime.OnsetTime: 474789
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4427
+		PictureTarget.OnsetDelay: 15
+		PictureTarget.OnsetTime: 479482
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 479662
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 180
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 122
+		Fix_time: 3623
+		J_time: 22
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 36
+		PrimePosition: left
+		prize: 10
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: bigwinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 36
+		PicturePrime.OnsetDelay: 11
+		PicturePrime.OnsetTime: 484777
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4404
+		PictureTarget.OnsetDelay: 6
+		PictureTarget.OnsetTime: 489438
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 489632
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 194
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 132
+		Fix_time: 3646
+		J_time: 31
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 37
+		PrimePosition: right
+		prize: 0
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: nowinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 37
+		PicturePrime.OnsetDelay: 19
+		PicturePrime.OnsetTime: 494799
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4126
+		PictureTarget.OnsetDelay: 16
+		PictureTarget.OnsetTime: 499192
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 499388
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 196
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 132
+		Fix_time: 3924
+		J_time: 36
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 38
+		PrimePosition: right
+		prize: 2
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: smallwinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 38
+		PicturePrime.OnsetDelay: 15
+		PicturePrime.OnsetTime: 504822
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4343
+		PictureTarget.OnsetDelay: 16
+		PictureTarget.OnsetTime: 509432
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 509600
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 168
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 134
+		Fix_time: 3707
+		J_time: 16
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 39
+		PrimePosition: right
+		prize: 10
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: bigwinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 39
+		PicturePrime.OnsetDelay: 17
+		PicturePrime.OnsetTime: 514810
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4266
+		PictureTarget.OnsetDelay: 10
+		PictureTarget.OnsetTime: 519337
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 519518
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 181
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 144
+		Fix_time: 3784
+		J_time: 28
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 40
+		PrimePosition: left
+		prize: 0
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: nowinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 40
+		PicturePrime.OnsetDelay: 5
+		PicturePrime.OnsetTime: 524799
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4048
+		PictureTarget.OnsetDelay: 10
+		PictureTarget.OnsetTime: 529108
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 529347
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 239
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 144
+		Fix_time: 4002
+		J_time: 48
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 41
+		PrimePosition: left
+		prize: 10
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: bigwinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 41
+		PicturePrime.OnsetDelay: 19
+		PicturePrime.OnsetTime: 534888
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4037
+		PictureTarget.OnsetDelay: 5
+		PictureTarget.OnsetTime: 539181
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 539369
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 188
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 154
+		Fix_time: 4013
+		J_time: 39
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 42
+		PrimePosition: left
+		prize: 2
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: smallwinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 42
+		PicturePrime.OnsetDelay: 11
+		PicturePrime.OnsetTime: 544910
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4179
+		PictureTarget.OnsetDelay: 13
+		PictureTarget.OnsetTime: 549353
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 549551
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 198
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 156
+		Fix_time: 3871
+		J_time: 47
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 43
+		PrimePosition: left
+		prize: 0
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: nowinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 43
+		PicturePrime.OnsetDelay: 20
+		PicturePrime.OnsetTime: 554949
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4396
+		PictureTarget.OnsetDelay: 13
+		PictureTarget.OnsetTime: 559609
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 559785
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 176
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 156
+		Fix_time: 3654
+		J_time: 40
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 44
+		PrimePosition: right
+		prize: 0
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: nowinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 44
+		PicturePrime.OnsetDelay: 10
+		PicturePrime.OnsetTime: 564954
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4107
+		PictureTarget.OnsetDelay: 2
+		PictureTarget.OnsetTime: 569314
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 569513
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 199
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 156
+		Fix_time: 3943
+		J_time: 20
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 45
+		PrimePosition: left
+		prize: 2
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: smallwinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 45
+		PicturePrime.OnsetDelay: 14
+		PicturePrime.OnsetTime: 574960
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4168
+		PictureTarget.OnsetDelay: 7
+		PictureTarget.OnsetTime: 579386
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 579596
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 210
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 158
+		Fix_time: 3882
+		J_time: 10
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 46
+		PrimePosition: right
+		prize: 0
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: nowinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 46
+		PicturePrime.OnsetDelay: 7
+		PicturePrime.OnsetTime: 584965
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4269
+		PictureTarget.OnsetDelay: 7
+		PictureTarget.OnsetTime: 589492
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 589671
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 179
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 158
+		Fix_time: 3781
+		J_time: 48
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 47
+		PrimePosition: right
+		prize: 2
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: smallwinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 47
+		PicturePrime.OnsetDelay: 19
+		PicturePrime.OnsetTime: 594987
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4344
+		PictureTarget.OnsetDelay: 15
+		PictureTarget.OnsetTime: 599597
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 599778
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 181
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 160
+		Fix_time: 3706
+		J_time: 27
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 48
+		PrimePosition: left
+		prize: 0
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: nowinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 48
+		PicturePrime.OnsetDelay: 6
+		PicturePrime.OnsetTime: 604976
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4017
+		PictureTarget.OnsetDelay: 8
+		PictureTarget.OnsetTime: 609252
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 609427
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 175
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 160
+		Fix_time: 4033
+		J_time: 16
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 49
+		PrimePosition: right
+		prize: 2
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: smallwinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 49
+		PicturePrime.OnsetDelay: 18
+		PicturePrime.OnsetTime: 614965
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4437
+		PictureTarget.OnsetDelay: 5
+		PictureTarget.OnsetTime: 619658
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 619836
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 178
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 162
+		Fix_time: 3613
+		J_time: 23
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 50
+		PrimePosition: left
+		prize: 0
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: nowinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 50
+		PicturePrime.OnsetDelay: 10
+		PicturePrime.OnsetTime: 624953
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4374
+		PictureTarget.OnsetDelay: 2
+		PictureTarget.OnsetTime: 629580
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 629789
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 209
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 162
+		Fix_time: 3676
+		J_time: 48
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 51
+		PrimePosition: right
+		prize: 10
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: bigwinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 51
+		PicturePrime.OnsetDelay: 19
+		PicturePrime.OnsetTime: 635009
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4397
+		PictureTarget.OnsetDelay: 12
+		PictureTarget.OnsetTime: 639669
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 639854
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 185
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 172
+		Fix_time: 3653
+		J_time: 45
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 52
+		PrimePosition: left
+		prize: 2
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: smallwinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 52
+		PicturePrime.OnsetDelay: 5
+		PicturePrime.OnsetTime: 645031
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4037
+		PictureTarget.OnsetDelay: 5
+		PictureTarget.OnsetTime: 649324
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 649504
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 180
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 174
+		Fix_time: 4013
+		J_time: 21
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 53
+		PrimePosition: left
+		prize: 10
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: bigwinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 53
+		PicturePrime.OnsetDelay: 13
+		PicturePrime.OnsetTime: 655020
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4314
+		PictureTarget.OnsetDelay: 12
+		PictureTarget.OnsetTime: 659597
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 659791
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 194
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 184
+		Fix_time: 3736
+		J_time: 31
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 54
+		PrimePosition: left
+		prize: 0
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: nowinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 54
+		PicturePrime.OnsetDelay: 19
+		PicturePrime.OnsetTime: 665042
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4459
+		PictureTarget.OnsetDelay: 17
+		PictureTarget.OnsetTime: 669769
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 669959
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 190
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 184
+		Fix_time: 3591
+		J_time: 46
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 55
+		PrimePosition: right
+		prize: 10
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: bigwinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 55
+		PicturePrime.OnsetDelay: 3
+		PicturePrime.OnsetTime: 675064
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4370
+		PictureTarget.OnsetDelay: 6
+		PictureTarget.OnsetTime: 679691
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 679892
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 201
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 194
+		Fix_time: 3680
+		J_time: 40
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 56
+		PrimePosition: left
+		prize: 2
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: smallwinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 56
+		PicturePrime.OnsetDelay: 10
+		PicturePrime.OnsetTime: 685103
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4233
+		PictureTarget.OnsetDelay: 9
+		PictureTarget.OnsetTime: 689596
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 689787
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 191
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 196
+		Fix_time: 3817
+		J_time: 39
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 57
+		PrimePosition: right
+		prize: 10
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: bigwinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 57
+		PicturePrime.OnsetDelay: 11
+		PicturePrime.OnsetTime: 695125
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4466
+		PictureTarget.OnsetDelay: 10
+		PictureTarget.OnsetTime: 699852
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 700052
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 200
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 206
+		Fix_time: 3584
+		J_time: 37
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 58
+		PrimePosition: right
+		prize: 2
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: smallwinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 58
+		PicturePrime.OnsetDelay: 13
+		PicturePrime.OnsetTime: 705147
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4084
+		PictureTarget.OnsetDelay: 8
+		PictureTarget.OnsetTime: 709490
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 709668
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 178
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 208
+		Fix_time: 3966
+		J_time: 33
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 59
+		PrimePosition: left
+		prize: 10
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: bigwinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 59
+		PicturePrime.OnsetDelay: 18
+		PicturePrime.OnsetTime: 715153
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4300
+		PictureTarget.OnsetDelay: 9
+		PictureTarget.OnsetTime: 719713
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 719916
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 203
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 218
+		Fix_time: 3750
+		J_time: 13
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 60
+		PrimePosition: right
+		prize: 2
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: smallwinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 60
+		PicturePrime.OnsetDelay: 4
+		PicturePrime.OnsetTime: 725158
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4356
+		PictureTarget.OnsetDelay: 3
+		PictureTarget.OnsetTime: 729768
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 729973
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 205
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 220
+		Fix_time: 3694
+		J_time: 37
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 61
+		PrimePosition: left
+		prize: 0
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: nowinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 61
+		PicturePrime.OnsetDelay: 13
+		PicturePrime.OnsetTime: 735197
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4480
+		PictureTarget.OnsetDelay: 13
+		PictureTarget.OnsetTime: 739941
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 740131
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 190
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 220
+		Fix_time: 3570
+		J_time: 44
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 62
+		PrimePosition: right
+		prize: 10
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: bigwinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 62
+		PicturePrime.OnsetDelay: 6
+		PicturePrime.OnsetTime: 745219
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4375
+		PictureTarget.OnsetDelay: 2
+		PictureTarget.OnsetTime: 749847
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 750038
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 191
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 230
+		Fix_time: 3675
+		J_time: 20
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 63
+		PrimePosition: left
+		prize: 0
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: nowinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 63
+		PicturePrime.OnsetDelay: 13
+		PicturePrime.OnsetTime: 755208
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4080
+		PictureTarget.OnsetDelay: 12
+		PictureTarget.OnsetTime: 759551
+		PictureTarget.DurationError: 0
+		PictureTarget.RTTime: 0
+		PictureTarget.ACC: 0
+		PictureTarget.RT: 0
+		PictureTarget.RESP: 
+		PictureTarget.CRESP: 5
+		SumPrize: 230
+		Fix_time: 3970
+		J_time: 14
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 64
+		PrimePosition: left
+		prize: 10
+		TargetPosition: left
+		CorrectAnswer: 5
+		Prime: bigwinleft.bmp
+		Target: targetleft.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 64
+		PicturePrime.OnsetDelay: 19
+		PicturePrime.OnsetTime: 765263
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4192
+		PictureTarget.OnsetDelay: 17
+		PictureTarget.OnsetTime: 769723
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 769906
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 183
+		PictureTarget.RESP: 5
+		PictureTarget.CRESP: 5
+		SumPrize: 240
+		Fix_time: 3858
+		J_time: 47
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 65
+		PrimePosition: right
+		prize: 10
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: bigwinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 65
+		PicturePrime.OnsetDelay: 19
+		PicturePrime.OnsetTime: 775285
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4322
+		PictureTarget.OnsetDelay: 4
+		PictureTarget.OnsetTime: 779862
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 780036
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 174
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 250
+		Fix_time: 3728
+		J_time: 18
+		*** LogFrame End ***
+		Level: 3
+		*** LogFrame Start ***
+		Procedure: TrialProc
+		TrialList: 66
+		PrimePosition: right
+		prize: 2
+		TargetPosition: right
+		CorrectAnswer: 4
+		Prime: smallwinright.bmp
+		Target: targetright.bmp
+		Target_time: 250
+		Running: TrialList
+		TrialList.Cycle: 1
+		TrialList.Sample: 66
+		PicturePrime.OnsetDelay: 15
+		PicturePrime.OnsetTime: 785274
+		PicturePrime.DurationError: 0
+		PicturePrime.RTTime: 0
+		PicturePrime.ACC: 1
+		PicturePrime.RT: 0
+		PicturePrime.RESP: 
+		PicturePrime.CRESP: 
+		Ant_time: 4069
+		PictureTarget.OnsetDelay: 6
+		PictureTarget.OnsetTime: 789600
+		PictureTarget.DurationError: -999999
+		PictureTarget.RTTime: 789787
+		PictureTarget.ACC: 1
+		PictureTarget.RT: 187
+		PictureTarget.RESP: 4
+		PictureTarget.CRESP: 4
+		SumPrize: 252
+		Fix_time: 3981
+		J_time: 34
+		*** LogFrame End ***
+	Level: 2
+	*** LogFrame Start ***
+	BlockList: 1
+	PracticeMode: no
+	Procedure: BlockProc
+	BlockList.Cycle: 1
+	BlockList.Sample: 1
+	Running: BlockList
+	*** LogFrame End ***
+Level: 1
+*** LogFrame Start ***
+Experiment: MIDT_forscan
+SessionDate: 01-01-2002
+SessionTime: 04:55:50
+RandomSeed: 1638223338
+Group: 1
+Subject: 05100
+Session: 1
+Display.RefreshRate: 59.868
+Target_time: 270
+*** LogFrame End ***
