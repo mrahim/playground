@@ -3,12 +3,21 @@ A script for parsing e-prime files
 :Author: RAHIM Mehdi
 """
 import os
+import numpy as np
 import pandas as pd
 
-# File ID Parsing Function
+# File id and date Parser
 def eprime_parse_filename(filename):
-    ''' returns the file_id of from the filename '''
-    return filename.split('-')[1]
+    ''' returns the file_id and the corrected date from the filename '''
+    file_id = filename.split('-')[1].strip()
+    c_date = ''
+    if len(file_id) == 5:
+        c_date = file_id[2:4] + '-' + file_id[0:2]
+        if file_id[4] < '9':
+            c_date += '-201' + file_id[4]
+        else:
+            c_date += '-200' + file_id[4]
+    return file_id, c_date
 
 # Quick and Dirty Parser
 def eprime_parse_data(filename):
@@ -47,15 +56,48 @@ def eprime_parse_data(filename):
                 hdr[fields[0]] = fields[1]
     return edf, hdr
 
-
-''' Parsing all subjects and saving :
-- a session csv per subject
-- a whole subject header csv '''
+'''
+Parsing all subjects and saving :
+    - a session csv per subject 
+    - a whole subject header csv 
+'''
+header_selected_cols = ['c_Subject', 'Subject', 'c_SessionDate',
+                        'SessionDate', 'SessionTime', 'nbTrials']
+eprime_selected_cols = ['TrialList',
+                        'PictureTarget.OnsetTime',
+                        'PictureTarget.ACC',
+                        'SumPrize',
+                        'prize',
+                        'CorrectAnswer',
+                        'PictureTarget.CRESP',
+                        'PictureTarget.RESP',
+                        'PictureTarget.OnsetDelay',
+                        'PictureTarget.RT',
+                        'PictureTarget.RTTime',
+                        'TargetPosition',
+                        'Target_time',
+                        'Ant_time',
+                        'Fix_time',
+                        'J_time',
+                        'PicturePrime.OnsetTime',
+                        'PicturePrime.OnsetDelay']
 header = pd.DataFrame()
 for fn in os.listdir('eprime_files'):
     if(fn[0] == 'M'):
         df, hd = eprime_parse_data(os.path.join('eprime_files', fn))
-        df.to_csv(os.path.join('eprime_files','csv',
-                               os.path.splitext(fn)[0]+'.csv'), sep=',')
+        hd['c_Subject'], hd['c_SessionDate'] = eprime_parse_filename(fn)
+        hd['nbTrials'] = np.str(df['TrialList'].count())
         header = header.append(hd, ignore_index=True)
-header.to_csv(os.path.join('eprime_files','csv','all_subjects.csv'), sep=',')        
+        # Save subject sessions
+        df.to_csv(os.path.join('eprime_files', 'csv',
+                               os.path.splitext(fn)[0] + '.csv'), sep=',')
+        if hd['nbTrials'] == '66':
+            df.to_csv(os.path.join('eprime_files', 'csv',
+                               'c_' + os.path.splitext(fn)[0] + '.csv'), 
+                                sep=',', columns=eprime_selected_cols)
+
+# Save all subjects metadata
+header.to_csv(os.path.join('eprime_files', 'csv', 'all_subjects.csv'),
+              sep=',')
+header.to_csv(os.path.join('eprime_files', 'csv', 'all_subjects_c.csv'),
+              sep=',', columns=header_selected_cols)
