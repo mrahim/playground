@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-A script that uses Pandas module to filter on csv files of adni database
+A script that uses Pandas module to filter csv files of adni database
 - unique subject list
 - distribution of the downloaded data (Groups, Modalities, Sex, ...)
 """
