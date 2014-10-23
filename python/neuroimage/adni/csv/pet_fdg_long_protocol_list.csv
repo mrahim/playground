@@ -1,0 +1,17 @@
+Slice Thickness=1.2;Radioisotope=F-18;Manufacturer=Siemens ECAT;Frames=0.0,6
+Slice Thickness=1.2;Radioisotope=F-18;Manufacturer=Siemens ECAT;Frames=12.0,4
+Slice Thickness=1.2;Radioisotope=F-18;Manufacturer=Siemens ECAT;Frames=6.0,8
+Slice Thickness=1.2;Radioisotope=F-18;Manufacturer=Siemens ECAT;Frames=7.0,40
+Slice Thickness=2.0;Radioisotope=F-18;Manufacturer=CPS;Frames=1.0,68
+Slice Thickness=2.0;Radioisotope=F-18;Manufacturer=Philips Medical Systems;Frames=6.0,90
+Slice Thickness=2.0;Radioisotope=F-18;Manufacturer=Philips;Frames=6.0,2
+Slice Thickness=2.0;Radioisotope=F-18;Manufacturer=SIEMENS;Frames=1.0,16
+Slice Thickness=2.0;Radioisotope=F-18;Manufacturer=SIEMENS;Frames=6.0,28
+Slice Thickness=2.4;Radioisotope=F-18;Manufacturer=Siemens/CTI;Frames=33.0,20
+Slice Thickness=2.4;Radioisotope=F-18;Manufacturer=Siemens/CTI;Frames=6.0,144
+Slice Thickness=3.3;Radioisotope=F-18;Manufacturer=GE MEDICAL SYSTEMS;Frames=6.0,72
+Slice Thickness=3.4;Radioisotope=F-18;Manufacturer=CPS;Frames=1.0,30
+Slice Thickness=3.4;Radioisotope=F-18;Manufacturer=Siemens/CTI;Frames=6.0,22
+Slice Thickness=4.3;Radioisotope=F-18;Manufacturer=GE MEDICAL SYSTEMS;Frames=1.0,4
+Slice Thickness=4.3;Radioisotope=F-18;Manufacturer=GE MEDICAL SYSTEMS;Frames=6.0,54
+Slice Thickness=4.3;Radioisotope=F-18;Manufacturer=GEMS;Frames=6.0,56
