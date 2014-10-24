@@ -32,9 +32,9 @@ filename = os.path.join('/home', 'mr243268', 'dev', 'playground', 'python',
                         'c_MIDT_forscan-10119-1.csv')
 df = pd.read_csv(filename)
 
-'''
+"""
 Extract hits, misses and noresps
-'''
+"""
 # hits
 hit = np.zeros(len(df))
 h_idx = df[df['PictureTarget.CRESP'] == df['PictureTarget.RESP']]['TrialList']
@@ -50,13 +50,13 @@ miss = np.zeros(len(df))
 m_idx = df[df['PictureTarget.CRESP'] + df['PictureTarget.RESP'] == 9 ]['TrialList']
 miss[m_idx.unique()-1] = 1
 
-'''
+"""
 Extract bigwins, smallwins and nowins
-'''
+"""
 # big wins
-bigwin = np.zeros(len(df))
-bw_idx = df[df['prize']==10]['TrialList']
-bigwin[bw_idx.unique()-1] = 1
+largewin = np.zeros(len(df))
+lw_idx = df[df['prize']==10]['TrialList']
+largewin[lw_idx.unique()-1] = 1
 
 # small wins
 smallwin = np.zeros(len(df))
@@ -68,3 +68,42 @@ nowin = np.zeros(len(df))
 nw_idx = df[df['prize']==0]['TrialList']
 nowin[nw_idx.unique()-1] = 1
 
+"""
+Extract press left (5), press right (4)
+"""
+# press left
+pleft = np.zeros(len(df))
+pl_idx = df[df['PictureTarget.CRESP'] == 5]['TrialList']
+pleft[pl_idx.unique()-1] = 1
+
+# press right
+pright = np.zeros(len(df))
+pr_idx = df[df['PictureTarget.CRESP'] == 4]['TrialList']
+pright[pr_idx.unique()-1] = 1
+
+"""
+Extract times
+"""
+anticip_start_time = df['PicturePrime.OnsetTime']/1000.
+response_time = df['PictureTarget.RTTime']/1000.
+feedback_start_time = (df['PictureTarget.OnsetTime'] + df['Target_time'])/1000.
+
+"""
+Compute conditions
+"""
+cond = pd.DataFrame({'hit': hit,
+                     'miss': miss,
+                     'noresp': noresp,
+                     'largewin': largewin,
+                     'smallwin': smallwin,
+                     'nowin': nowin,
+                     'pleft': pleft,
+                     'pright': pright,
+                     'response_time': response_time,
+                     'anticip_start_time': anticip_start_time,
+                     'feedback_start_time': feedback_start_time
+                     })
+
+print cond[(hit==1) & (largewin==1)]['anticip_start_time']
+
+# hit, largewin
