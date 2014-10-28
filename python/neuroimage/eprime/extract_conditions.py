@@ -22,30 +22,37 @@ A script that extracts the conditions from eprime csv file :
     - Press_right
 """
 
-import os
+import os, glob
 import numpy as np
 import pandas as pd
 from nipy.modalities.fmri import design_matrix
 from nipy.modalities.fmri.experimental_paradigm import BlockParadigm
 
+BASE_DIR = '/Users/Mehdi/Codes'
+BASE_DIR = '/home/mr243268'
+
+N_SCANS = 350
+TR = 2.4
+
 # Load eprime csv file
-filename = os.path.join('/Users', 'Mehdi', 'Codes', 'dev', 'playground', 'python',
+filename = os.path.join(BASE_DIR, 'dev', 'playground', 'python',
                         'neuroimage', 'eprime', 'eprime_files', 'csv',
                         'c_MIDT_forscan-10119-1.csv')
 
-for f in [filename]:
+
+file_list = glob.glob(os.path.join(BASE_DIR, 'dev', 'playground', 'python',
+                        'neuroimage', 'eprime', 'eprime_files', 'csv',
+                        'c_*.csv'))
+
+for f in file_list:
 
     df = pd.read_csv(f)
 
-    """
-    Set event durations
-    """
+    # Set event durations
     anticip_duration = 4.
     feedback_duration = 1.5
     
-    """
-    Extract hits, misses and noresps
-    """
+    # Extract hits, misses and noresps
     # hits
     hit = np.zeros(len(df))
     h_idx = df[df['PictureTarget.CRESP'] == df['PictureTarget.RESP']]['TrialList']
@@ -61,9 +68,7 @@ for f in [filename]:
     m_idx = df[df['PictureTarget.CRESP'] + df['PictureTarget.RESP'] == 9 ]['TrialList']
     miss[m_idx.values - 1] = 1
     
-    """
-    Extract bigwins, smallwins and nowins
-    """
+    # Extract bigwins, smallwins and nowins
     # big wins
     largewin = np.zeros(len(df))
     lw_idx = df[df['prize']==10]['TrialList']
@@ -79,9 +84,8 @@ for f in [filename]:
     nw_idx = df[df['prize']==0]['TrialList']
     nowin[nw_idx.values - 1] = 1
     
-    """
-    Extract press left (5), press right (4)
-    """
+
+    # Extract press left (5), press right (4)
     # press left
     pleft = np.zeros(len(df))
     pl_idx = df[df['PictureTarget.RESP'] == 5]['TrialList']
@@ -92,16 +96,12 @@ for f in [filename]:
     pr_idx = df[df['PictureTarget.RESP'] == 4]['TrialList']
     pright[pr_idx.values - 1] = 1
     
-    """
-    Extract times
-    """
+    # Extract times
     anticip_start_time = df['PicturePrime.OnsetTime']/1000.
     response_time = df['PictureTarget.RTTime']/1000.
     feedback_start_time = (df['PictureTarget.OnsetTime'] + df['Target_time'])/1000.
     
-    """
-    Compute conditions
-    """
+    # Compute conditions
     cond = pd.DataFrame({'response_time': response_time,
                          'anticip_start_time': anticip_start_time,
                          'feedback_start_time': feedback_start_time})
@@ -160,9 +160,8 @@ for f in [filename]:
     modulationnamelist = ['anticip_hit_modgain', 'anticip_missed_modgain', 
                           'feedback_hit_modgain', 'feedback_missed_modgain']
 
-    # Create paradigms
-    
-    block_cond = {'anticip_hit_largewin' : anticip_hit_largewin,
+    # Create paradigms    
+    conditions = {'anticip_hit_largewin' : anticip_hit_largewin,
                   'anticip_hit_smallwin' : anticip_hit_smallwin,
                   'anticip_hit_nowin' : anticip_hit_nowin,
                   'anticip_missed_largewin' : anticip_missed_largewin,
@@ -175,24 +174,31 @@ for f in [filename]:
                   'feedback_missed_largewin' : feedback_missed_largewin,
                   'feedback_missed_smallwin' : feedback_missed_smallwin,
                   'feedback_missed_nowin' : feedback_missed_nowin,
-                  'feedback_noresp' : feedback_noresp}
-                  
+                  'feedback_noresp' : feedback_noresp,
+                  'press_left' : press_left,
+                  'press_right' : press_right}
 
     condition = []
     onset = []
-    for c in block_cond:
-        condition += [c]*len(block_cond[c])
-        print c, len(block_cond[c])
-        onset = np.hstack([onset, block_cond[c]])
-    durations = [4.]*len(condition)
-    b_paradigm = BlockParadigm(con_id=condition,
-                               onset = onset,
-                               duration = durations)    
+    durations = []
+    for c in conditions:
+        condition += [c]*len(conditions[c])
+        onset = np.hstack([onset, conditions[c]])
+        if c[0] == 'a':
+            durations += [anticip_duration]*len(conditions[c])
+        elif c[0] == 'f':
+            durations += [feedback_duration]*len(conditions[c])
+        else:
+            durations += [0]*len(conditions[c])
+        
+    paradigm = BlockParadigm(con_id=condition,
+                        onset = onset,
+                        duration = durations)    
                                
-    frametimes = np.linspace(0,800,800)
-    
-    design_mat = design_matrix.make_dmtx(frametimes, b_paradigm,
+    frametimes = np.linspace(0, (N_SCANS-1)*TR, num=N_SCANS)
+    design_mat = design_matrix.make_dmtx(frametimes, paradigm,
                                      hrf_model='Canonical',
                                      drift_model='Cosine',
                                      hfcut=128)
+    print f
     design_mat.show()

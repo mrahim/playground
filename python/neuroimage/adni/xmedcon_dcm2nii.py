@@ -18,6 +18,7 @@ def sort_dcm_files(dcm_files):
 #
 #
 BASE_DIR = '/disk4t/mehdi/data/pet_fdg_baseline_processed_ADNI'
+#BASE_DIR = '/disk4t/mehdi/data/test_coreg'
 wdir = os.getcwd()
 
 for root, dirs, files in os.walk(BASE_DIR):
@@ -32,6 +33,7 @@ for root, dirs, files in os.walk(BASE_DIR):
         file_list = sort_dcm_files(file_list)
         dcm_files = ' '.join(file_list) # Construct a string of dcm files
         medcon_cmd = ' '.join(['medcon', '-n', '-qs', '-stack3d',
+                               '-fh', '-fv',
                                '-c', 'dicom', 'nifti', '-w',
                                '-o', image_id, '-f', dcm_files])
         os.chdir(root)
@@ -42,4 +44,3 @@ for root, dirs, files in os.walk(BASE_DIR):
         f = open(os.path.join('reports', image_id + '_conv.txt'), 'w+')
         f.write('\n'.join(file_list))
         f.close()
-        

@@ -45,6 +45,8 @@ def eprime_parse_data(filename):
                 level_flag = -1
                 continue
             fields = line.split(": ")
+            fields[0] = fields[0].replace(':', '')
+            fields[0] = fields[0].replace(' ', '')
             if fields[0] == "Level":
                 level_flag = int(fields[1])
                 continue
@@ -62,7 +64,7 @@ Parsing all subjects and saving :
     - a whole subject header csv 
 '''
 header_selected_cols = ['c_Subject', 'Subject', 'c_SessionDate',
-                        'SessionDate', 'SessionTime', 'nbTrials']
+                        'SessionDate', 'SessionTime', 'nbTrials', 'PP.Onset']
 eprime_selected_cols = ['TrialList',
                         'PictureTarget.OnsetTime',
                         'PictureTarget.ACC',
@@ -84,7 +86,11 @@ eprime_selected_cols = ['TrialList',
 header = pd.DataFrame()
 for fn in os.listdir('eprime_files'):
     if(fn[0] == 'M'):
+        print fn
         df, hd = eprime_parse_data(os.path.join('eprime_files', fn))
+        hd['PP.Onset'] = ''
+        if 'PicturePrime.OnsetTime' in df.keys():
+            hd['PP.Onset'] = df['PicturePrime.OnsetTime'][0]
         hd['c_Subject'], hd['c_SessionDate'] = eprime_parse_filename(fn)
         hd['nbTrials'] = np.str(df['TrialList'].count())
         header = header.append(hd, ignore_index=True)
@@ -95,7 +101,6 @@ for fn in os.listdir('eprime_files'):
             df.to_csv(os.path.join('eprime_files', 'csv',
                                'c_' + os.path.splitext(fn)[0] + '.csv'), 
                                 sep=',', columns=eprime_selected_cols)
-
 # Save all subjects metadata
 header.to_csv(os.path.join('eprime_files', 'csv', 'all_subjects.csv'),
               sep=',')

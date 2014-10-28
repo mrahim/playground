@@ -11,13 +11,13 @@ from pypreprocess.realign import MRIMotionCorrection
 
 id_subject = 'S14847'
 
-os.chdir("/home/Ppsypim/PSYDAT/Subjects/")
+os.chdir("/shfj/Ppsypim/PSYDAT/Subjects/")
 fmri_list = glob.glob(os.path.join(os.getcwd(),id_subject,'MRI','MID')+'/E*.nii')
 fmri_list = fmri_list[3:]
 
 mrimc = MRIMotionCorrection(n_sessions=289)
 mrimc.fit(fmri_list)
-realign = mrimc.transform('/home/mr243268/data', reslice=True, concat=True)
+realign = mrimc.transform('/disk4t/mehdi/data', reslice=True, concat=True)
 
 for sess, rp_filename in zip(xrange(len(mrimc._rp_filenames_)),
                              mrimc._rp_filenames_):

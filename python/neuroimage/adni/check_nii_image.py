@@ -36,7 +36,7 @@ for root, dirs, files in os.walk(BASE_DIR):
         except ValueError as exc:
                         
             ord_img = image.reorder_img(img, resample=True)
-            resampled_image = image.resample_img(ord_img, interpolation='nearest')
+            resampled_image = image.resample_img(ord_img)
             affine = np.eye(4)
             plotting.plot_img(nib.Nifti1Image(img.get_data(), affine),
                   output_file=os.path.join('figs', output_fig_name+'x'),

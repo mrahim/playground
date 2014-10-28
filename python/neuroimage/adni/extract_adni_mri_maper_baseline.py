@@ -20,6 +20,7 @@ DST_BASE_DIR = '/disk4t/mehdi/data/pet_fdg_baseline_processed_ADNI'
 file_list = glob.glob(BASE_DIR+'/*.xml')
 file_df = pd.DataFrame(file_list, columns=['filepath'])
 
+cfile_list = []
 for image_id in mri_masked['Image_ID']:
     matching = ['I'+str(image_id)+'.xml' in fl for fl in file_df['filepath']]
     xml_file = file_df[matching]['filepath'].unique()
@@ -41,4 +42,4 @@ for image_id in mri_masked['Image_ID']:
             shutil.rmtree(dst_path)
         shutil.copytree(image_folder, dst_path)
         shutil.copy(xml_file[0], DST_BASE_DIR)
-            
+        cfile_list.append(image_id)
