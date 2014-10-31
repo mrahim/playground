@@ -8,7 +8,7 @@ import numpy as np
 from scipy import io
 from collections import OrderedDict
 
-def generate_multiconditions_mat(conditions, ddurations):
+def generate_multiconditions_mat(output_file, conditions, ddurations):
     names = np.zeros((len(conditions),), dtype=np.object)
     onsets = np.zeros((len(conditions),), dtype=np.object)
     durations = np.zeros((len(conditions),), dtype=np.object)
@@ -16,6 +16,7 @@ def generate_multiconditions_mat(conditions, ddurations):
         names[i] = conditions.keys()[i]
         onsets[i] = conditions[names[i]]
         durations[i] = ddurations[names[i]]
+
     return names, onsets, durations
 
 

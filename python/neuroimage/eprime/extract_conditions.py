@@ -23,15 +23,54 @@ A script that extracts the conditions from eprime csv file :
 """
 
 import os, glob
+from collections import OrderedDict
 import numpy as np
+from scipy import io
+import matplotlib.pyplot as plt
 import pandas as pd
 from nipy.modalities.fmri import design_matrix
 from nipy.modalities.fmri.experimental_paradigm import BlockParadigm
 
+
+def check_eprime_subject(eprime_file, mapping):
+    """
+        A temporary function that checks if the eprime id
+        has an existing corresponding subject
+    """
+    eprime_nb = eprime_file.split('/')[-1].split('.')[0].rsplit('-')[-2]
+    res = mapping[mapping['eprime'] == int(eprime_nb)]['subject'].values
+    return res
+
+
+def generate_multiregressors_mat(output_file, regressors):
+    """
+        Generate a *.mat file that contains the regressors
+    """
+    io.savemat(output_file, {'R': regressors})
+
+def generate_multiconditions_mat(output_file, conditions, ddurations):
+    """
+        Generate a *.mat file that contains the names, the onsets
+        and the durations, according to SPM's mutiple coditions file
+    """
+    names = np.zeros((len(conditions),), dtype=np.object)
+    onsets = np.zeros((len(conditions),), dtype=np.object)
+    durations = np.zeros((len(conditions),), dtype=np.object)
+    for i in np.arange(0, len(conditions)):
+            names[i] = conditions.keys()[i]
+            print names[i]
+            onsets[i] = conditions[names[i]]
+            durations[i] = ddurations[names[i]]
+    io.savemat(output_file, {'names' : names,
+                             'onsets' : onsets,
+                             'durations' : durations})
+    return names, onsets, durations
+
+
 BASE_DIR = '/Users/Mehdi/Codes'
 BASE_DIR = '/home/mr243268'
 
-N_SCANS = 350
+N_SCANS = 289
 TR = 2.4
 
 # Load eprime csv file
@@ -50,7 +89,7 @@ for f in file_list:
 
     # Set event durations
     anticip_duration = 4.
-    feedback_duration = 1.5
+    feedback_duration = 1.45
     
     # Extract hits, misses and noresps
     # hits
@@ -97,9 +136,11 @@ for f in file_list:
     pright[pr_idx.values - 1] = 1
     
     # Extract times
-    anticip_start_time = df['PicturePrime.OnsetTime']/1000.
-    response_time = df['PictureTarget.RTTime']/1000.
-    feedback_start_time = (df['PictureTarget.OnsetTime'] + df['Target_time'])/1000.
+    first_onset = df['PicturePrime.OnsetTime'][0]
+    start_delay = 6000
+    anticip_start_time = (df['PicturePrime.OnsetTime'] - first_onset + start_delay - 2 * TR)/1000.
+    response_time = (df['PictureTarget.RTTime'] - first_onset + start_delay - 2 * TR)/1000.
+    feedback_start_time = (df['PictureTarget.OnsetTime'] + df['Target_time'] - first_onset + start_delay - 2 * TR)/1000.
     
     # Compute conditions
     cond = pd.DataFrame({'response_time': response_time,
@@ -160,7 +201,33 @@ for f in file_list:
     modulationnamelist = ['anticip_hit_modgain', 'anticip_missed_modgain', 
                           'feedback_hit_modgain', 'feedback_missed_modgain']
 
-    # Create paradigms    
+    # Load regressors
+    mapping = pd.read_csv(os.path.join('/','home','mr243268',
+                                       'dev','playground','python',
+                                       'neuroimage','eprime','mapping.csv'),
+                          names=['eprime','subject'])
+    
+    subject_id = check_eprime_subject(f, mapping)
+    if len(subject_id)>0:
+        print subject_id[0]
+        filepath = os.path.join('/','home','mr243268',
+                                'dev','playground','python',
+                                'neuroimage','eprime',
+                                'movement_files', 
+                                ''.join(['S',str(subject_id[0]),
+                                '_reg.csv']))
+        if os.path.isfile(filepath):
+            reg = pd.read_csv(filepath)
+            regressors = reg.values[:,1:]
+            output_file = os.path.join(BASE_DIR, 'dev', 'playground', 'python',
+                                       'neuroimage', 'eprime', 'eprime_files',
+                                       'mat', ''.join(['S',str(subject_id[0]),'_reg']))
+            generate_multiregressors_mat(output_file, regressors)
+    
+
+    # Create paradigms   
+    conditions =  OrderedDict()
+    """
     conditions = {'anticip_hit_largewin' : anticip_hit_largewin,
                   'anticip_hit_smallwin' : anticip_hit_smallwin,
                   'anticip_hit_nowin' : anticip_hit_nowin,
@@ -177,6 +244,31 @@ for f in file_list:
                   'feedback_noresp' : feedback_noresp,
                   'press_left' : press_left,
                   'press_right' : press_right}
+                  
+ conditions = {'anticip_hit_largewin' : anticip_hit_largewin,
+                  'anticip_hit_smallwin' : anticip_hit_smallwin,
+                  'anticip_hit_nowin' : anticip_hit_nowin,
+                  'anticip_noresp' : anticip_noresp,
+                  'feedback_hit_largewin' : feedback_hit_largewin,
+                  'feedback_hit_smallwin' : feedback_hit_smallwin,
+                  'feedback_hit_nowin' : feedback_hit_nowin,
+                  'feedback_noresp' : feedback_noresp,
+                  'press_left' : press_left,
+                  'press_right' : press_right}
+   """
+    conditions['anticip_hit_largewin'] = anticip_hit_largewin
+    conditions['anticip_hit_smallwin'] = anticip_hit_smallwin
+    conditions['anticip_hit_nowin'] = anticip_hit_nowin
+    conditions['anticip_noresp'] = anticip_noresp
+    conditions['feedback_hit_largewin'] = feedback_hit_largewin
+    conditions['feedback_hit_smallwin'] = feedback_hit_smallwin
+    conditions['feedback_hit_nowin'] = feedback_hit_nowin
+    conditions['feedback_noresp'] = feedback_noresp
+    conditions['press_left'] = press_left
+    conditions['press_right'] = press_right
+    
+    
+   
 
     condition = []
     onset = []
@@ -190,15 +282,48 @@ for f in file_list:
             durations += [feedback_duration]*len(conditions[c])
         else:
             durations += [0]*len(conditions[c])
-        
+
     paradigm = BlockParadigm(con_id=condition,
-                        onset = onset,
-                        duration = durations)    
+                             onset=onset,
+                             duration=durations)
                                
     frametimes = np.linspace(0, (N_SCANS-1)*TR, num=N_SCANS)
     design_mat = design_matrix.make_dmtx(frametimes, paradigm,
                                      hrf_model='Canonical',
                                      drift_model='Cosine',
                                      hfcut=128)
-    print f
-    design_mat.show()
+                                     
+    output_file = os.path.join(BASE_DIR, 'dev', 'playground', 'python',
+                               'neuroimage', 'eprime', 'eprime_files',
+                               'mat', f.split('/')[-1].split('.')[0])
+    
+    durations =  OrderedDict()
+    durations = {'anticip_hit_largewin' : 4.,
+                  'anticip_hit_smallwin' : 4.,
+                  'anticip_hit_nowin' : 4.,
+                  'anticip_missed_largewin' : 4.,
+                  'anticip_missed_smallwin' : 4.,
+                  'anticip_missed_nowin' : 4.,
+                  'anticip_noresp' : 4.,
+                  'feedback_hit_largewin' : 1.45,
+                  'feedback_hit_smallwin' : 1.45,
+                  'feedback_hit_nowin' : 1.45,
+                  'feedback_missed_largewin' : 1.45,
+                  'feedback_missed_smallwin' : 1.45,
+                  'feedback_missed_nowin' : 1.45,
+                  'feedback_noresp' : 1.45,
+                  'press_left' : 0.,
+                  'press_right' : 0.}
+
+    generate_multiconditions_mat(output_file, conditions, durations)
+
+    fig_title = f.split('/')[-1].split('.')[0]
+    if len(subject_id)>0:
+        fig_title += '-S'+ str(subject_id[0])
+        output_file_s = os.path.join(BASE_DIR, 'dev', 'playground', 'python',
+                               'neuroimage', 'eprime', 'eprime_files',
+                               'mat', ''.join(['S',str(subject_id[0]),'_cond']))        
+        generate_multiconditions_mat(output_file_s, conditions, durations)
+    #design_mat.show()
+    #plt.title(fig_title)
+    
