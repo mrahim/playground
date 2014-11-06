@@ -2,7 +2,8 @@
 A script that renames MID and T1MRI data :
 - S[xxxxx]_s005[000i].nii
 - S[xxxxx]_struct.hdr, .img
-- 
+
+Added : a plotting of the T1MRI data
 """
 
 import os, glob
@@ -47,14 +48,13 @@ for subject in os.listdir(BASE_DIR):
             os.chdir(filedir)
             os.rename(filename, new_filename)            
             
-    """
     hdr_files = glob.glob(os.path.join(anat_path, '*.hdr'))
     if len(hdr_files)>0:
         img = nib.load(hdr_files[0])
         new_img = image.reorder_img(img,resample='continuous')
         ax = plotting.plot_img(new_img)
         ax.title(subject)
-    """
+
 
     
     
