@@ -33,7 +33,7 @@ for idx, row in data.iterrows():
     seg_img = nib.load(seg)
 
     pet_data = pet_img.get_data()
-    seg_data = seg_img.get_data()[:, :, :, 0]    
+    seg_data = seg_img.get_data()[:, :, :, 0]
     
     for val in np.unique(seg_data):
         if val > 0:
