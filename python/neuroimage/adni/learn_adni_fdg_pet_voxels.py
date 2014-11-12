@@ -95,6 +95,14 @@ else:
     np.save('features', X)
 
 
+    pet_data = pet_img.get_data()
+    seg_data = seg_img.get_data()[:, :, :, 0]
+    
+    for val in np.unique(seg_data):
+        if val > 0:
+            ind = (seg_data == val)
+            X[idx,(val/256)-1] = np.mean(pet_data[ind])
+
 #AD/MCI, AD/Normal, MCI/LMCI, MCI/Normal
 pairwise_groups = [['AD', 'Normal'],
                    ['AD', 'MCI'],
