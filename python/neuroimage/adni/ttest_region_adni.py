@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Nov 10 23:30:08 2014
-
+T-test on (83) regions of two DX groups.
+Plot t-maps and p-maps on the (83) regions
 @author: Mehdi
 """
 
@@ -15,9 +15,9 @@ from nilearn import plotting
 
 
 
-BASE_DIR = '/Users/Mehdi/Codes/data/pet_fdg_baseline_processed_ADNI/'
+BASE_DIR = '/disk4t/mehdi/data/pet_fdg_baseline_processed_ADNI/'
 
-data = pd.read_csv('description_file.csv')
+data = pd.read_csv(os.path.join(BASE_DIR, 'description_file.csv'))
 x = np.load('features.npy')
 
 

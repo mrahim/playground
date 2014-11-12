@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Oct 13 13:47:44 2014
-
+Parsing all subjects header
 @author: mehdi
 """
 

@@ -1,6 +1,6 @@
 """
 A script for parsing e-prime files
-:Author: RAHIM Mehdi
+@author: Mehdi Rahim
 """
 import os
 import numpy as np

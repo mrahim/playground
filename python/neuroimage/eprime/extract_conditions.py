@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-A script that extracts the conditions from eprime csv file :
+A script that extracts the conditions from eprime csv file,
+and saves them into an SPM multiconditions file (.mat).
+It saves the corresponding movement regressors from movement_files/
+into a (.mat) file in movement_files
+The conditions are :
     *
     - Anticip_hit_largewin
     - Anticip_hit_smallwin
@@ -58,7 +62,6 @@ def generate_multiconditions_mat(output_file, conditions, ddurations):
     durations = np.zeros((len(conditions),), dtype=np.object)
     for i in np.arange(0, len(conditions)):
             names[i] = conditions.keys()[i]
-            print names[i]
             onsets[i] = conditions[names[i]]
             durations[i] = ddurations[names[i]]
     io.savemat(output_file, {'names' : names,
@@ -138,8 +141,8 @@ for f in file_list:
     # Extract times
     first_onset = df['PicturePrime.OnsetTime'][0]
     start_delay = 6000
-    anticip_start_time = (df['PicturePrime.OnsetTime'] - first_onset + start_delay - 2 * TR)/1000.
-    response_time = (df['PictureTarget.RTTime'] - first_onset + start_delay - 2 * TR)/1000.
+    anticip_start_time = (df['PicturePrime.OnsetTime'] - first_onset + start_delay - 2000 * TR)/1000.
+    response_time = (df['PictureTarget.RTTime'] - first_onset + start_delay - 2000 * TR)/1000.
     feedback_start_time = (df['PictureTarget.OnsetTime'] + df['Target_time'] - first_onset + start_delay - 2 * TR)/1000.
     
     # Compute conditions
@@ -324,6 +327,5 @@ for f in file_list:
                                'neuroimage', 'eprime', 'eprime_files',
                                'mat', ''.join(['S',str(subject_id[0]),'_cond']))        
         generate_multiconditions_mat(output_file_s, conditions, durations)
-    #design_mat.show()
-    #plt.title(fig_title)
-    
+    design_mat.show()
+    plt.title(fig_title)

@@ -7,6 +7,7 @@ import os, glob
 import pandas as pd
 
 BASE_DIR = '/disk4t/mehdi/data/pet_fdg_baseline_processed_ADNI'
+BASE_DIR = ''
 
 mri_filepath = os.path.join('csv', 'search_results',
                         'maper_segmented_mri_10_21_2014.csv')

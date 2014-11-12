@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Oct 31 17:52:51 2014
-
-@author: mr243268
+    A transfer script of the files of the movement regressors
+    from the eprime mat folder to the MID/MAT file
 """
 
 
@@ -23,4 +22,3 @@ for f in os.listdir(BASE_DIR):
             os.mkdir(dst_dir)
         shutil.copyfile(fpath, os.path.join(dst_dir, f))
         print os.path.join(dst_dir, f)
-    
