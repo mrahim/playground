@@ -35,7 +35,7 @@ pet_files = []
 pet_img = []
 for idx, row in data.iterrows():
     pet_file = glob.glob(os.path.join(BASE_DIR,
-                                      'I' + str(row.Image_ID_y), '*.nii'))
+                                      'I' + str(row.Image_ID_y), 'I*.nii'))
     if len(pet_file)>0:
         pet_files.append(pet_file[0])
         img = nib.load(pet_file[0])
@@ -44,6 +44,8 @@ for idx, row in data.iterrows():
 masker = NiftiMasker(mask_strategy='epi',
                      mask_args=dict(opening=8))
 masker.fit(pet_files)
+
+
 pet_masked = masker.transform_niimgs(pet_files, n_jobs=4)
 pet_masked = np.vstack(pet_masked)
 nb_vox = pet_masked.shape[1]
