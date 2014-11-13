@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-T-test on the voxels of two DX groups.
+T-test on the voxels of pairwise DX groups.
 Plot t-maps and p-maps on the voxels.
 @author: Mehdi
 """
@@ -28,8 +28,7 @@ def plot_mask(pet_files, pet_imgs):
 
 
 BASE_DIR = '/disk4t/mehdi/data/pet_fdg_baseline_processed_ADNI'
-BASE_DIR = os.path.join('/', 'Volumes', 'CORSAIR', 'data',
-                        'PIM', 'pet_fdg_baseline_processed_ADNI')
+
 data = pd.read_csv(os.path.join(BASE_DIR, 'description_file.csv'))
 
 pet_files = []
@@ -62,7 +61,6 @@ for gr in groups:
     p_masked = - np.log10(p_masked)
 
 
-    #TODO permuted_ols(gr1_f, gr2_f
     gr_idx = np.hstack([gr1_idx, gr2_idx])        
     gr_f = pet_masked[gr_idx, :]
     gr_labels = np.vstack([np.hstack([[1]*len(gr1_idx), [0]*len(gr2_idx)]),
@@ -70,7 +68,8 @@ for gr in groups:
 
     
     neg_log_pvals, t_scores, _ = permuted_ols(gr_labels, gr_f,
-                                                            n_perm=1)
+                                              n_perm=1000, n_jobs=4,
+                                              model_intercept=True)
 
         
     tmap = masker.inverse_transform(t_masked)
@@ -84,8 +83,17 @@ for gr in groups:
     p_path = os.path.join('figures',
                           'pmap_voxel_'+gr[0]+'_'+gr[1]+'_baseline_adni')
     
-    plot_stat_map(tmap, tmap, output_file=t_path, black_bg=True)
-    plot_stat_map(pmap, pmap, output_file=p_path, black_bg=True)
-    
-    plot_stat_map(tscore, tscore, black_bg=True, title='/'.join(gr))
-    plot_stat_map(pscore, pscore, black_bg=True, title='/'.join(gr))
+    plot_stat_map(tmap, tmap, output_file=t_path,
+                  black_bg=True, title='/'.join(gr))
+    plot_stat_map(pmap, pmap, output_file=p_path,
+                  black_bg=True, title='/'.join(gr))
+                  
+    t_path = os.path.join('figures',
+                          'tmap_perm_voxel_'+gr[0]+'_'+gr[1]+'_baseline_adni')
+    p_path = os.path.join('figures',
+                          'pmap_perm_voxel_'+gr[0]+'_'+gr[1]+'_baseline_adni')                  
+                  
+    plot_stat_map(tscore, tscore, output_file=t_path,
+                  black_bg=True, title='/'.join(gr))
+    plot_stat_map(pscore, img, output_file=p_path,
+                  black_bg=True, title='/'.join(gr))
