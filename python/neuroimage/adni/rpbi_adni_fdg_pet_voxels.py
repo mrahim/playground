@@ -21,14 +21,14 @@ pet_files = []
 pet_img = []
 for idx, row in data.iterrows():
     pet_file = glob.glob(os.path.join(BASE_DIR,
-                                      'I' + str(row.Image_ID_y), 'I*.nii'))
+                                      'I' + str(row.Image_ID_y), 'wI*.nii'))
     if len(pet_file) > 0:
         pet_files.append(pet_file[0])
         img = nib.load(pet_file[0])
         pet_img.append(img)
 
 masker = NiftiMasker(mask_strategy='epi',
-                     mask_args=dict(opening=8))
+                     mask_args=dict(opening=1))
 masker.fit(pet_files)
 
 pet_masked = masker.transform_niimgs(pet_files, n_jobs=4)
@@ -72,12 +72,13 @@ for gr in groups:
     pscore = masker.inverse_transform(neg_log_pvals[0])
 
     t_path = os.path.join('figures',
-                          'tmap_perm_voxel_'+gr[0]+'_'+gr[1]+'_baseline_adni')
+                          'pmap_perm_voxel_norm_'+gr[0]+'_'+gr[1]+'_baseline_adni')
     p_path = os.path.join('figures',
-                          'pmap_rpbi_voxel_'+gr[0]+'_'+gr[1]+'_baseline_adni')
+                          'pmap_rpbi_voxel_norm_'+gr[0]+'_'+gr[1]+'_baseline_adni')
 
-    plot_stat_map(pscore, img,
+    plot_stat_map(pscore, img, output_file=t_path,
                   black_bg=True, title='/'.join(gr))
     plot_stat_map(neg_log_pvals_rpbi_unmasked, img, output_file=p_path,
                   black_bg=True, title='/'.join(gr))
-    break
+                  
+    neg_log_pvals_rpbi_unmasked.to_filename(p_path+'.nii')

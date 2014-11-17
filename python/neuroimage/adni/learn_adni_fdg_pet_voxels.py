@@ -1,6 +1,6 @@
 """
 A script that :
-- extracts reg from FDG PET (baseline uniform)
+- computes a Masker from FDG PET (baseline uniform)
 - cross-validates a linear SVM classifier
 - computes a ROC curve and AUC
 """
@@ -13,35 +13,16 @@ import nibabel as nib
 from sklearn import svm
 from sklearn import cross_validation
 from sklearn.metrics import roc_curve, auc
-
-
-def plot_groups(data):
-    """Cumulative bars of pairwise groups
-    """
-    groups = data.groupby('DX_Group').size()
-    labels = ['AD/Normal', 'AD/MCI', 'MCI/Normal', 'MCI/LMCI']
-    
-    p1 = [groups.AD, groups.AD, groups.MCI, groups.MCI]
-    p2 = [groups.Normal, groups.MCI, groups.Normal, groups.LMCI]
-    width = .35
-    plt.bar(range(len(p1)), p1, width, color='g')    
-    plt.bar(range(len(p2)), p2, width, color='y', bottom=p1)
-    plt.ylabel('Individuals')
-    plt.title('Population repartition')
-    plt.xticks(np.arange(len(p1))+width/2., labels )
-    plt.yticks(np.arange(0,81,10))
-    fname = 'population_repartition_adni_baseline'
-    plt.savefig(os.path.join('figures', fname))
-
+from nilearn.input_data import NiftiMasker
 
 def plot_shufflesplit(score, pairwise_groups):
     """Boxplot of the accuracies
     """
     plt.boxplot(score, labels=['/'.join(pg) for pg in pairwise_groups])
     plt.ylabel('Accuracy')
-    plt.title('ADNI baseline accuracies')
+    plt.title('ADNI baseline accuracies (voxels)')
     plt.legend(loc="lower right")
-    fname = 'boxplot_adni_baseline'
+    fname = 'boxplot_adni_baseline_voxels'
     plt.savefig(os.path.join('figures', fname))
     
 
@@ -58,50 +39,38 @@ def plot_roc(cv_dict):
         plt.ylim([0.0, 1.05])
         plt.xlabel('False Positive Rate')
         plt.ylabel('True Positive Rate')
-        plt.title('ADNI baseline ROC curves')
+        plt.title('ADNI baseline ROC curves (voxels)')
         plt.legend(loc="lower right")
 
-    fname = 'roc_adni_baseline'
+    fname = 'roc_adni_baseline_voxels'
     plt.savefig(os.path.join('figures', fname))
 
-
+ 
 
 BASE_DIR = '/disk4t/mehdi/data/pet_fdg_baseline_processed_ADNI'
 data = pd.read_csv(os.path.join(BASE_DIR, 'description_file.csv'))
-Y = np.zeros(len(data))
-Y[data[data.DX_Group=='AD'].index.values]=1
 
-if os.path.exists('features.npy'):
-    X = np.load('features.npy')
+
+if os.path.exists('features_voxels.npy'):
+    X = np.load('features_voxels.npy')
 else:
-    X = np.zeros((len(data), 83))
+    pet_files = []
+    pet_img = []
     for idx, row in data.iterrows():
-        pet_id = ''.join(['I', str(row['Image_ID_y'])])
-        pet = glob.glob(os.path.join(BASE_DIR, pet_id, '*.nii.gz'))[0]
-        
-        seg_id = ''.join(['I', str(row['Image_ID_x'])])
-        seg = glob.glob(os.path.join(BASE_DIR, seg_id, '*.nii'))[0]
-        
-        pet_img = nib.load(pet)
-        seg_img = nib.load(seg)
+        pet_file = glob.glob(os.path.join(BASE_DIR,
+                                          'I' + str(row.Image_ID_y), 'I*.nii'))
+        if len(pet_file) > 0:
+            pet_files.append(pet_file[0])
+            img = nib.load(pet_file[0])
+            pet_img.append(img)
     
-        pet_data = pet_img.get_data()
-        seg_data = seg_img.get_data()[:, :, :, 0]
-        
-        for val in np.unique(seg_data):
-            if val > 0:
-                ind = (seg_data == val)
-                X[idx,(val/256)-1] = np.mean(pet_data[ind])
-    np.save('features', X)
+    masker = NiftiMasker(mask_strategy='epi',
+                         mask_args=dict(opening=8))
+    masker.fit(pet_files)
+    pet_masked = masker.transform_niimgs(pet_files, n_jobs=4)
+    X = np.vstack(pet_masked)
+    np.save('features_voxels', X)
 
-
-    pet_data = pet_img.get_data()
-    seg_data = seg_img.get_data()[:, :, :, 0]
-    
-    for val in np.unique(seg_data):
-        if val > 0:
-            ind = (seg_data == val)
-            X[idx,(val/256)-1] = np.mean(pet_data[ind])
 
 #AD/MCI, AD/Normal, MCI/LMCI, MCI/Normal
 pairwise_groups = [['AD', 'Normal'],
@@ -113,18 +82,15 @@ score = np.zeros((nb_iter, len(pairwise_groups)))
 crossval = dict()
 pg_counter = 0
 for pg in pairwise_groups:
-    x = np.zeros([0,83])
-    for dx in pg:
-        print dx
-        ind = data[data.DX_Group == dx].index.values
-        x = np.append(x, X[ind,:], axis=0)
+    gr1_idx = data[data.DX_Group == pg[0]].index.values
+    gr2_idx = data[data.DX_Group == pg[1]].index.values
+    x = X[np.concatenate((gr1_idx, gr2_idx))]
     y = np.ones(len(x))
-    y[len(y) - len(ind):] = 0
+    y[len(y) - len(gr2_idx):] = 0
 
-    
     estim = svm.SVC(kernel='linear')
-    sss = cross_validation.StratifiedShuffleSplit(y, n_iter=nb_iter, test_size=0.25)
-    # 1000 runs with randoms 75% / 25% : StratifiedShuffleSplit
+    sss = cross_validation.StratifiedShuffleSplit(y, n_iter=nb_iter, test_size=0.2)
+    # 1000 runs with randoms 80% / 20% : StratifiedShuffleSplit
     counter = 0
     for train, test in sss:
         Xtrain, Xtest = x[train], x[test]
@@ -161,4 +127,3 @@ plot_roc(crossval)
 plt.figure()
 plot_shufflesplit(score, pairwise_groups)
 plt.figure()
-plot_groups(data)

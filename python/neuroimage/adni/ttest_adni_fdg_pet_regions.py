@@ -32,8 +32,8 @@ data = pd.read_csv(os.path.join('description_file.csv'))
 Y = np.zeros(len(data))
 Y[data[data.DX_Group=='AD'].index.values]=1
 
-if os.path.exists('features.npy'):
-    X = np.load('features.npy')
+if os.path.exists('features_regions.npy'):
+    X = np.load('features_regions.npy')
     
 
 

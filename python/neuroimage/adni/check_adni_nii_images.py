@@ -35,18 +35,18 @@ for root, dirs, files in os.walk(BASE_DIR):
             '''
         except ValueError as exc:
                         
-            ord_img = image.reorder_img(img, resample=True)
+            ord_img = image.reorder_img(img, resample='nearest')
             resampled_image = image.resample_img(ord_img)
             affine = np.eye(4)
             plotting.plot_img(nib.Nifti1Image(img.get_data(), affine),
-                  output_file=os.path.join('figs', output_fig_name+'x'),
+                  output_file=os.path.join('figures/visualization', output_fig_name+'x'),
                   title=str(img.shape),
                   black_bg=True)
             plotting.plot_img(ord_img,
-                  output_file=os.path.join('figs', output_fig_name),
+                  output_file=os.path.join('figures/visualization', output_fig_name),
                   title=str(img.shape),
-                  black_bg=True)         
-            ord_img.to_filename(os.path.join('figs', output_fig_name+'.nii'))
+                  black_bg=True)
+            ord_img.to_filename(os.path.join('figures/visualization', output_fig_name+'.nii'))
             error_counter += 1
             print str(filename[0])
             
