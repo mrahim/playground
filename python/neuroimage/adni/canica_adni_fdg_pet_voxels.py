@@ -23,13 +23,15 @@ for idx, row in data.iterrows():
     if len(pet_file)>0:
         pet_files.append(pet_file[0])
         img = nib.load(pet_file[0])
-        pet_img.append(img)
+        img4d = nib.Nifti1Image(np.expand_dims(img.get_data(), axis=3),
+                                img.get_affine())
+        pet_img.append(img4d)
 pet_files = np.array(pet_files)
 
 groups = ['AD', 'LMCI', 'MCI', 'Normal']
 
 for gr in groups:
-    # Extract gr_idx    
+    # Extract gr_idx
     gr_idx = data[data.DX_Group == gr].index.values
     pfiles = pet_files[gr_idx]
     
@@ -37,7 +39,7 @@ for gr in groups:
     canica = CanICA(n_components=n_components,
                     memory="nilearn_cache", memory_level=5,
                     threshold=3., verbose=10, random_state=0)
-    canica.fit(pfiles[0])
+    canica.fit(pet_img)
 
     print 'inverse'
     
@@ -48,6 +50,6 @@ for gr in groups:
         plot_stat_map(nib.Nifti1Image(components_img.get_data()[..., i],
                                           components_img.get_affine()),
                       display_mode="z", title="IC %d"%i, cut_coords=1,
-                      colorbar=False)    
+                      colorbar=False)  
 
     break
