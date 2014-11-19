@@ -25,15 +25,11 @@ from scipy import stats
 ###############################################################################
 
 
-N_CLUSTERS_SET = [100]
-SPATIAL_NEIGHBORHOOD_SET = [False]
-USE_CENTROIDS_SET = [False]
-"""
-N_CLUSTERS = 83
-SPATIAL_NEIGHBORHOOD = False
-USE_CENTROIDS = False
-"""
+N_CLUSTERS_SET = [100, 200, 500, 1000, 2000]
+
+
 BASE_DIR = '/disk4t/mehdi/data/pet_fdg_baseline_processed_ADNI'
+BASE_DIR = '/Volumes/FREECOM/Data/pet_fdg_baseline_processed_ADNI'
 MNI_TEMPLATE = os.path.join(BASE_DIR, 'wMNI152_T1_2mm_brain.nii')
 
 data = pd.read_csv(os.path.join(BASE_DIR, 'description_file.csv'))
@@ -72,10 +68,11 @@ for N_CLUSTERS in N_CLUSTERS_SET:
     # Computing the ward for the first time, this is long...
     ward = WardAgglomeration(n_clusters=N_CLUSTERS, connectivity=connectivity,
                              memory='nilearn_cache')
-    ward.fit(pet_data_masked.T)
+
+    ward.fit(pet_data_masked)
     ward_labels_unique = np.unique(ward.labels_)
     ward_labels = ward.labels_
-
+    
     ##############################################################################
     # Generate cluster matrix
     ##############################################################################
@@ -145,17 +142,16 @@ for N_CLUSTERS in N_CLUSTERS_SET:
         pmap.to_filename(os.path.join('figures', 'nii', p_nii_filename))
         pvalmap.to_filename(os.path.join('figures', 'nii', pval_nii_filename))
     
-        plot_stat_map(tmap, MNI_TEMPLATE, threshold=None, cmap=cm.bwr,
+        plot_stat_map(tmap, img, threshold=None, cmap=cm.bwr,
                       output_file=os.path.join('figures', 'tmap', t_fig_filename),
                       black_bg=True, title='/'.join(gr))
     
-        plot_img(pmap, bg_img=MNI_TEMPLATE, threshold=None,
+        plot_img(pmap, bg_img=img, threshold=None,
                  colorbar=True, cmap=cm.hot, vmin=0,
                  output_file=os.path.join('figures', 'pmap', p_fig_filename),
                  black_bg=True, title='/'.join(gr))
                  
-        plot_img(pvalmap, bg_img=MNI_TEMPLATE, threshold=None,
+        plot_img(pvalmap, bg_img=img, threshold=None,
                  colorbar=True, cmap=cm.hot, vmin=0,
                  output_file=os.path.join('figures', 'pmap', pval_fig_filename),
                  black_bg=True, title='/'.join(gr))
-        break
