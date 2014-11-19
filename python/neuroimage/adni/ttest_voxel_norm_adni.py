@@ -12,8 +12,9 @@ import os, glob
 import numpy as np
 import pandas as pd
 import nibabel as nib
+from matplotlib import cm
 from nilearn.input_data import NiftiMasker
-from nilearn.plotting import plot_roi, plot_stat_map
+from nilearn.plotting import plot_roi, plot_stat_map, plot_img
 from nilearn.mass_univariate import permuted_ols
 from scipy import stats
 
@@ -26,6 +27,7 @@ def plot_mask(pet_files, pet_imgs):
                  title=pf.split('/')[-1].split('.')[0])
 
 BASE_DIR = '/disk4t/mehdi/data/pet_fdg_baseline_processed_ADNI'
+MNI_TEMPLATE = os.path.join(BASE_DIR, 'wMNI152_T1_2mm_brain.nii')
 
 data = pd.read_csv(os.path.join(BASE_DIR, 'description_file.csv'))
 
@@ -44,7 +46,6 @@ masker = NiftiMasker(mask_strategy='epi',
 masker.fit(pet_files)
 
 plot_roi(masker.mask_img_, pet_file[0])
-
 
 pet_masked = masker.transform_niimgs(pet_files, n_jobs=6)
 pet_masked = np.vstack(pet_masked)
@@ -87,7 +88,7 @@ for gr in groups:
     
     plot_stat_map(tmap, tmap, output_file=t_path,
                   black_bg=True, title='/'.join(gr), cut_coords=(1,-21,11))
-    plot_stat_map(pmap, pmap, output_file=p_path,
+    plot_img(pmap, output_file=p_path, cmap=cm.hot, colorbar=True, vmin=0,
                   black_bg=True, title='/'.join(gr), cut_coords=(1,-21,11))
     tmap.to_filename(t_path+'.nii')
     pmap.to_filename(p_path+'.nii')
@@ -97,10 +98,19 @@ for gr in groups:
     p_path = os.path.join('figures',
                           'pmap_perm_voxel_norm_'+gr[0]+'_'+gr[1]+'_baseline_adni')                  
                   
+    """
+    plot_stat_map(tscore, tscore, output_file=t_path,
+                  black_bg=True, title='/'.join(gr), cut_coords=(1,-21,11),
+                  cmap=cm.hot, colorbar=True)
+    plot_stat_map(pscore, img, output_file=p_path,
+                  black_bg=True, title='/'.join(gr), cut_coords=(1,-21,11),
+                  cmap=cm.hot, colorbar=True)
+    """           
     plot_stat_map(tscore, tscore, output_file=t_path,
                   black_bg=True, title='/'.join(gr), cut_coords=(1,-21,11))
-    plot_stat_map(pscore, img, output_file=p_path,
-                  black_bg=True, title='/'.join(gr), cut_coords=(1,-21,11))
+    plot_img(pscore, bg_img=MNI_TEMPLATE, output_file=p_path,
+             black_bg=True, title='/'.join(gr),
+             cmap=cm.hot, colorbar=True, vmin=0, vmax=3)
 
     tscore.to_filename(t_path+'.nii')
     pscore.to_filename(p_path+'.nii')
