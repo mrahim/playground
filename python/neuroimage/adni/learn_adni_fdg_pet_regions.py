@@ -36,32 +36,39 @@ def plot_groups(data):
 def plot_shufflesplit(score, pairwise_groups):
     """Boxplot of the accuracies
     """
-    plt.boxplot(score, labels=['/'.join(pg) for pg in pairwise_groups])
+    bp = plt.boxplot(score, labels=['/'.join(pg) for pg in pairwise_groups])
+    for key in bp.keys():
+        for box in bp[key]:
+            box.set(linewidth=2)
+    plt.grid(axis='y')
     plt.ylabel('Accuracy')
     plt.title('ADNI baseline accuracies (regions)')
     plt.legend(loc="lower right")
-    fname = 'boxplot_adni_baseline_regions'
-    plt.savefig(os.path.join('figures', fname))
-    
+    for ext in ['png', 'pdf', 'svg']:
+        fname = '.'.join(['boxplot_adni_baseline_regions_norm', ext])
+        plt.savefig(os.path.join('figures', fname))
+
 
 def plot_roc(cv_dict):
     """Plot roc curves for each pairwise groupe
     """
-
     for pg in cv_dict.keys():
         plt.plot(crossval[pg]['fpr'],crossval[pg]['tpr'],
+                 linewidth=2,
                  label='{0} (auc = {1:0.2f})'
                                    ''.format(pg, crossval[pg]['auc']))
         plt.plot([0, 1], [0, 1], 'k--')
         plt.xlim([0.0, 1.0])
         plt.ylim([0.0, 1.05])
+        plt.grid(True)
         plt.xlabel('False Positive Rate')
         plt.ylabel('True Positive Rate')
         plt.title('ADNI baseline ROC curves (regions)')
         plt.legend(loc="lower right")
-
-    fname = 'roc_adni_baseline_regions'
-    plt.savefig(os.path.join('figures', fname))
+    
+    for ext in ['png', 'pdf', 'svg']:
+        fname = '.'.join(['roc_adni_baseline_regions_norm', ext])
+        plt.savefig(os.path.join('figures', fname))
 
 
 
@@ -106,7 +113,7 @@ pairwise_groups = [['AD', 'Normal'],
                    ['AD', 'MCI'],
                    ['MCI', 'Normal'],
                    ['MCI', 'LMCI']]
-nb_iter = 1000
+nb_iter = 100
 score = np.zeros((nb_iter, len(pairwise_groups)))
 crossval = dict()
 pg_counter = 0

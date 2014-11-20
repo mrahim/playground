@@ -68,3 +68,15 @@ for gr in groups:
                       colorbar=True, vmin=-6.4, vmax=6.4)
     plotting.plot_stat_map(p_img, p_img, black_bg=True, title='/'.join(gr),
                       output_file=p_path, cut_coords=[0, 36, 0])
+
+    t_nii_filename = '_'.join(['tmap', 'regions'])
+    t_nii_filename += '_' + '_'.join(gr)
+    t_nii_filename += '.nii'
+    
+    pval_nii_filename = '_'.join(['pvalmap', 'regions'])
+    pval_nii_filename += '_' + '_'.join(gr)
+    pval_nii_filename += '.nii'
+
+    t_img.to_filename(os.path.join('figures', 'nii', t_nii_filename))
+    p_img.to_filename(os.path.join('figures', 'nii', pval_nii_filename))
+                      
